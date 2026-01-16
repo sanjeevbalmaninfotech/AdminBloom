@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import ContactUsPage from './contact-us/page';
 
 export default function Home() {
   const router = useRouter();
@@ -16,8 +17,7 @@ export default function Home() {
   // Optional: Could add a loader while redirecting, but null is fine
   return (
     <>
-      <h1>Welcome!</h1>
-      <p>You are logged in.</p>
+   <ContactUsPage/>
     </>
   );
 }

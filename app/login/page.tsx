@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import { mainUrls } from '../constant/endPoints';
 
 
 interface LoginResponse {
@@ -26,7 +27,7 @@ export default function Login() {
    
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL
-        ? `${process.env.NEXT_PUBLIC_API_URL}/admin/login`
+        ? `${mainUrls.backendUrl}/admin/login`
         : 'http://localhost:8088/admin/login';
     
       const response = await axios.post<LoginResponse>(

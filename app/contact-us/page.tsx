@@ -13,6 +13,7 @@ import {
   FilterPayload,
   Pagination,
 } from "../api/constant/contactUs";
+import { mainUrls } from "../constant/endPoints";
 
 // --- Icons ---
 const SearchIcon = () => (
@@ -176,7 +177,7 @@ export default function ContactUsPage() {
       payload.page = page;
       payload.limit = pagination.limit;
 
-      const apiUrl = "http://localhost:8088/admin/getContactUsData";
+      const apiUrl = `${mainUrls.backendUrl}/admin/getContactUsData`;
 
       // DIRECTLY send payload. Removed the "hasFilters" check.
       const response = await axios.post<ApiResponse>(apiUrl, payload, {
