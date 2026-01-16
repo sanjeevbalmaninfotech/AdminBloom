@@ -26,9 +26,8 @@ export default function Login() {
     setLoading(true);
    
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL
-        ? `${mainUrls.backendUrl}/admin/login`
-        : 'http://localhost:8088/admin/login';
+      const apiUrl =  `${mainUrls.backendUrl}/admin/login`
+        
     
       const response = await axios.post<LoginResponse>(
         apiUrl,
