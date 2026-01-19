@@ -266,7 +266,7 @@ export default function ContactUsPage() {
 
     // Title
     doc.setFontSize(18);
-    doc.text("Contact Inquiries Report", 14, 22);
+    doc.text("Contact Enquiries Report", 14, 22);
     doc.setFontSize(11);
     doc.setTextColor(100);
     doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 30);
