@@ -127,7 +127,7 @@ export default function ContactUsPage() {
   const [entries, setEntries] = useState<ContactUsEntry[]>([]);
   const [pagination, setPagination] = useState<Pagination>({
     page: 1,
-    limit: 10,
+    limit: 25,
     total: 0,
     totalPages: 0,
   });
