@@ -186,11 +186,12 @@ export default function ContactUsPage() {
         },
       });
 
-      const data = response.data;
 
+      const data = response.data;
+      console.log("Response === >", data.webSiteBackendResponse);
       if (data.success) {
-        setEntries(data.responseObject.data);
-        setPagination(data.responseObject.pagination);
+        setEntries(data.webSiteBackendResponse.data);
+        setPagination(data.webSiteBackendResponse.pagination);
       } else {
         setError(data.message || "Failed to fetch data");
       }
@@ -371,11 +372,10 @@ export default function ContactUsPage() {
 
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className={`flex items-center px-4 py-2 text-sm font-medium border rounded-lg transition-colors ${
-                showFilters
-                  ? "bg-slate-100 text-slate-700 border-slate-300"
-                  : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50"
-              }`}
+              className={`flex items-center px-4 py-2 text-sm font-medium border rounded-lg transition-colors ${showFilters
+                ? "bg-slate-100 text-slate-700 border-slate-300"
+                : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50"
+                }`}
             >
               <FilterIcon /> Filters
             </button>
@@ -390,11 +390,10 @@ export default function ContactUsPage() {
 
         {/* Filters Panel */}
         <div
-          className={`transition-all duration-300 ease-in-out overflow-hidden ${
-            showFilters
-              ? "max-h-[500px] opacity-100 mb-8"
-              : "max-h-0 opacity-0 mb-0"
-          }`}
+          className={`transition-all duration-300 ease-in-out overflow-hidden ${showFilters
+            ? "max-h-[500px] opacity-100 mb-8"
+            : "max-h-0 opacity-0 mb-0"
+            }`}
         >
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
@@ -734,11 +733,10 @@ export default function ContactUsPage() {
                       <button
                         key={p}
                         onClick={() => handlePageChange(p)}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                          pagination.page === p
-                            ? "bg-slate-900 text-white"
-                            : "text-slate-700 hover:bg-slate-100"
-                        }`}
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${pagination.page === p
+                          ? "bg-slate-900 text-white"
+                          : "text-slate-700 hover:bg-slate-100"
+                          }`}
                       >
                         {p}
                       </button>
